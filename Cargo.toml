@@ -1,0 +1,17 @@
+[package]
+name = "genesys-dice-roller"
+version = "0.1.0"
+authors = ["Arran France <arran@arranfrance.com>"]
+edition = "2021"
+description = "A simple dice rolling library for genesys dice strings"
+repository = "https://github.com/arranf/genesys-dice-roller"
+license = "MIT"
+readme = "README.md"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+genesys-dice-command-parser = "0.1.0"
+rand = "0.8.5"
+thiserror = "1.0.31"
+rand_pcg = "0.3.1"
