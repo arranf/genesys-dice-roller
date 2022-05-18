@@ -55,8 +55,7 @@ impl DiceSet {
             .iter()
             .map(|d| d.roll_dice_from_rng(&mut rng))
             .collect();
-
-        DiceSetResults::new(results, self.dice.first().unwrap().variant)
+        DiceSetResults::new(results)
     }
 }
 

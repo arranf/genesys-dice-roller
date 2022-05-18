@@ -15,13 +15,11 @@ pub struct DiceSetResults {
     pub despair_count: u32,
     pub dark_pips: u32,
     pub light_pips: u32,
-    pub dice_type: DiceType
 }
 
 impl DiceSetResults {
-    pub(crate) fn new(dice_results: Vec<RollResult>, dice_type: DiceType) -> Self {
+    pub(crate) fn new(dice_results: Vec<RollResult>) -> Self {
         DiceSetResults {
-            dice_type,
             dice_results: dice_results.clone(),
             success_fail_net: dice_results.iter().map(|r| r.success_fail_net).sum(),
             advantage_threat_net: dice_results.iter().map(|r| r.advantage_threat_net).sum(),
@@ -43,11 +41,12 @@ pub struct RollResult {
     pub triumph_count: u32,
     pub despair_count: u32,
     pub dark_pips: u32,
-    pub light_pips: u32
+    pub light_pips: u32,
+    pub dice_type: DiceType
 }
 
 impl RollResult {
-    pub(crate) fn new(raw_results: Vec<DieFace>) -> Self {
+    pub(crate) fn new(dice_type: DiceType, raw_results: Vec<DieFace>) -> Self {
         let mut success = 0;
         let mut fail = 0;
         let mut threat = 0;
@@ -83,6 +82,7 @@ impl RollResult {
         let advantage_threat_net = advantage - threat;
 
         RollResult {
+            dice_type,
             raw_results,
             success_fail_net,
             advantage_threat_net,

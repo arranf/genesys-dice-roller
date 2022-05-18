@@ -82,7 +82,7 @@ impl Dice {
         for _ in 0..self.number_of_dice_to_roll {
             results.push(get_die_face_for_dice(rng.gen_range(0..self.sides) as usize, &self.variant));
         }
-        RollResult::new(results)
+        RollResult::new(self.variant, results)
     }
 }
 
