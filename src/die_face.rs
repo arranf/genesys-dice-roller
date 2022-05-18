@@ -1,5 +1,3 @@
-use std::fmt::Display;
-
 use genesys_dice_command_parser::{
     dice::Dice as DiceType
 };

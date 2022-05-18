@@ -1,5 +1,9 @@
 use crate::{die_face::DieFace};
 
+use genesys_dice_command_parser::{
+    dice::Dice as DiceType
+};
+
 /// Represents the result of rolling `DiceSet`.
 #[derive(PartialEq, Debug)]
 pub struct DiceSetResults {
@@ -10,12 +14,14 @@ pub struct DiceSetResults {
     pub triumph_count: u32,
     pub despair_count: u32,
     pub dark_pips: u32,
-    pub light_pips: u32
+    pub light_pips: u32,
+    pub dice_type: DiceType
 }
 
 impl DiceSetResults {
-    pub(crate) fn new(dice_results: Vec<RollResult>) -> Self {
+    pub(crate) fn new(dice_results: Vec<RollResult>, dice_type: DiceType) -> Self {
         DiceSetResults {
+            dice_type,
             dice_results: dice_results.clone(),
             success_fail_net: dice_results.iter().map(|r| r.success_fail_net).sum(),
             advantage_threat_net: dice_results.iter().map(|r| r.advantage_threat_net).sum(),
