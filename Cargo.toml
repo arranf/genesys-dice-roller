@@ -1,6 +1,6 @@
 [package]
 name = "genesys-dice-roller"
-version = "0.2.0"
+version = "0.2.1"
 authors = ["Arran France <arran@arranfrance.com>"]
 edition = "2021"
 description = "A simple dice rolling library for genesys dice strings"

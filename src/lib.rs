@@ -8,3 +8,4 @@ pub mod dice_set;
 pub mod error;
 pub mod roll;
 pub mod die_face;
+pub use genesys_dice_command_parser::dice::Dice as DiceType;
