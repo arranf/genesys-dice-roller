@@ -1,6 +1,6 @@
 [package]
 name = "genesys-dice-roller"
-version = "0.2.1"
+version = "0.2.2"
 authors = ["Arran France <arran@arranfrance.com>"]
 edition = "2021"
 description = "A simple dice rolling library for genesys dice strings"
@@ -13,5 +13,5 @@ readme = "README.md"
 [dependencies]
 genesys-dice-command-parser = "0.1.1"
 rand = "0.8.5"
-thiserror = "1.0.31"
+thiserror = "1.0.35"
 rand_pcg = "0.3.1"
